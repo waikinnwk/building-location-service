@@ -1,1 +1,1 @@
-web: java -cp target/classes/ io.kin.buildinglocationservice.BuildingLocationServiceApplication
+java -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar
