@@ -44,19 +44,23 @@
 
 	<build>
 		<plugins>
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.springframework.boot</groupId> -->
-<!-- 				<artifactId>spring-boot-maven-plugin</artifactId> -->
-<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.springframework.boot</groupId> -->
+			<!-- <artifactId>spring-boot-maven-plugin</artifactId> -->
+			<!-- </plugin> -->
 			<plugin>
 				<groupId>com.heroku.sdk</groupId>
 				<artifactId>heroku-maven-plugin</artifactId>
 				<configuration>
 					<jdkVersion>11</jdkVersion>
 					<appName>building-location-service</appName>
-					<mainClass>io.kin.buildinglocationservice.BuildingLocationServiceApplication</mainClass>
+					<archive>
+						<manifest>
+							<mainClass>io.kin.buildinglocationservice.BuildingLocationServiceApplication</mainClass>
+						</manifest>
+					</archive>
 					<processTypes>
-						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>					
+						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
 					</processTypes>
 				</configuration>
 			</plugin>
