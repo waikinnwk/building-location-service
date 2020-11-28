@@ -44,12 +44,11 @@
 
 	<build>
 		<plugins>
-			<!-- <plugin> -->
-			<!-- <groupId>org.springframework.boot</groupId> -->
-			<!-- <artifactId>spring-boot-maven-plugin</artifactId> -->
-			<!-- </plugin> -->
 			<plugin>
-				<!-- Build an executable JAR -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
@@ -67,7 +66,8 @@
 					<jdkVersion>11</jdkVersion>
 					<appName>building-location-service</appName>
 					<processTypes>
-						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* io.kin.buildinglocationservice.BuildingLocationServiceApplication</web>
+						<web>java $JAVA_OPTS -cp target/classes:target/dependency/*
+							io.kin.buildinglocationservice.BuildingLocationServiceApplication</web>
 					</processTypes>
 				</configuration>
 			</plugin>
