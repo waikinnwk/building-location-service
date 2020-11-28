@@ -55,7 +55,8 @@
 					<jdkVersion>11</jdkVersion>
 					<appName>building-location-service</appName>
 					<processTypes>
-						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+<!-- 						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web> -->
+						<web>java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar</web>						
 					</processTypes>
 				</configuration>
 			</plugin>
