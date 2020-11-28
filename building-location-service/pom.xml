@@ -52,7 +52,7 @@
 				<groupId>com.heroku.sdk</groupId>
 				<artifactId>heroku-maven-plugin</artifactId>
 				<configuration>
-					<jdkVersion>11</jdkVersion>
+					<jdkVersion>1.11</jdkVersion>
 					<appName>building-location-service</appName>
 					<processTypes>
 						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
