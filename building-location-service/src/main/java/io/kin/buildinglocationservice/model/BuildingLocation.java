@@ -4,8 +4,8 @@ package io.kin.buildinglocationservice.model;
 public class BuildingLocation {
 	private String district;
 	private String buildingName;
-	private double lat;
-	private double lon;
+	private Double lat;
+	private Double lon;
 	
 	public BuildingLocation(String district, String buildingName, double lat, double lon) {
 		this.district = district;
@@ -32,16 +32,16 @@ public class BuildingLocation {
 	public void setBuildingName(String buildingName) {
 		this.buildingName = buildingName;
 	}
-	public double getLat() {
+	public Double getLat() {
 		return lat;
 	}
-	public void setLat(double lat) {
+	public void setLat(Double lat) {
 		this.lat = lat;
 	}
-	public double getLon() {
+	public Double getLon() {
 		return lon;
 	}
-	public void setLon(double lon) {
+	public void setLon(Double lon) {
 		this.lon = lon;
 	}
 }

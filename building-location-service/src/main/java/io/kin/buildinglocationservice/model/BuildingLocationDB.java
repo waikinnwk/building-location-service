@@ -14,84 +14,58 @@ public class BuildingLocationDB implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private double lat;
-	private double lon;
-
 	@Id
-	private CompositeKey id;
-
-
-	static class CompositeKey implements Serializable {
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		private String district;
-		private String buildingName;
-
-		public String getDistrict() {
-			return district;
-		}
-
-		public void setDistrict(String district) {
-			this.district = district;
-		}
-
-		public String getBuildingName() {
-			return buildingName;
-		}
-
-		public void setBuildingName(String buildingName) {
-			this.buildingName = buildingName;
-		}
-	}
+	private BuildingLocationId id;
+	private Double lat;
+	private Double lon;
 
 	public BuildingLocationDB() {
-		this.id = new CompositeKey();
+		this.id = new BuildingLocationId();
 	}
 
 	public BuildingLocationDB(String district, String buildingName, double lat, double lon) {
-		this.id = new CompositeKey();
-		this.id.district = district;
-		this.id.buildingName = buildingName;
+		this.id = new BuildingLocationId();
+		this.id.setDistrict(district);
+		this.id.setBuildingName(buildingName);
 		this.lat = lat;
 		this.lon = lon;
 	}
 
 	public BuildingLocation toObj() {
-		BuildingLocation obj = new BuildingLocation(this.id.district,this.id.buildingName,this.lat,this.lon);
+		BuildingLocation obj = new BuildingLocation(this.id.getDistrict(), this.id.getBuildingName(), this.lat,
+				this.lon);
 		return obj;
 	}
-	
+
 	public String getDistrict() {
-		return this.id.district;
+		return this.id.getDistrict();
 	}
 
 	public void setDistrict(String district) {
-		this.id.district = district;
+		this.id.setDistrict(district);
 	}
 
 	public String getBuildingName() {
-		return this.id.buildingName;
+		return this.id.getBuildingName();
 	}
 
 	public void setBuildingName(String buildingName) {
-		this.id.buildingName = buildingName;
+		this.id.setBuildingName(buildingName);
 	}
 
-	public double getLat() {
+	public Double getLat() {
 		return lat;
 	}
 
-	public void setLat(double lat) {
+	public void setLat(Double lat) {
 		this.lat = lat;
 	}
 
-	public double getLon() {
+	public Double getLon() {
 		return lon;
 	}
 
-	public void setLon(double lon) {
+	public void setLon(Double lon) {
 		this.lon = lon;
 	}
 }
